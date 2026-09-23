@@ -5,6 +5,12 @@ function isValidQuantity(quantity) {
 function calculateTicketPrice(quantity, unitPrice, isVip = false) {
   let price = quantity * unitPrice;
 
+  if (quantity >= 10) {
+    price *= 0.85;
+  } else if (quantity >= 5) {
+    price *= 0.90;
+  }
+
   if (isVip) {
     price += 10;
   }
